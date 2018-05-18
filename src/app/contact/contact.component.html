@@ -1,44 +1,25 @@
-<p id="headline">
-    CONTACT US </p>
+
 <div class="container">
-    <div class="row">
-        <div class="column-lg-6">
-            OUR LOCATION
-            <br> Suspect inc
-            <br> 4233 Sample ave San Fransisco, CA 92431
-
-        </div>
-        
+  <p id="headline"> CONTACT US
+    <BR>
+    <BR>
+  </p>
+  <form action="action_page.php">
 
 
-                <div class="col-sm-6 my-1">
+    <input type="text" id="fname" name="firstname" placeholder="Your full name" [(ngModel)]="contact.fullname" required>
+    <br>
 
-                        <label class="sr-only" for="inlineFormInputGroupUsername">Your name</label>
-                        <div class="input-group">
-                          <div class="input-group-prepend">
-                            <div class="input-group-text">@</div><div>
 
-                        
-                          </div>
-                          <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Name">
-                        </div>
-                      </div>
-                      <br>
-                      
-                      <div class="col-sm-6 my-1">
-
-                            <label class="sr-only" for="inlineFormInputGroupUsername">Your name</label>
-                            <div class="input-group">
-                              <div class="input-group-prepend">
-                                <div class="input-group-text">@</div><div>
-    
-                            
-                              </div>
-                              <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Name">
-                            </div>
-                          </div>
+    <input type="text" id="lname" name="lastname" placeholder="Email" [(ngModel)]="contact.email" required>
+    <br>
 
 
 
 
-                  
+    <textarea id="subject" name="subject" placeholder="Your message" style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+
+  </form>
+</div>

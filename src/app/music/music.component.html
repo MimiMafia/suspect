@@ -1,0 +1,16 @@
+<h1> UPCOMING EVENTS</h1>
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 colText" *ngFor="let item of concertArray">
+      {{item.title}}
+    <a href="{{item.website}}">
+    <img [src]="item.url" height="290" width="310"> 
+      </a>
+      <br> {{item.date}}
+      <br> {{item.location}}
+      <br>
+    </div>
+  </div>
+</div>
