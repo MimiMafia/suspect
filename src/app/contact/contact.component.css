@@ -1,3 +1,5 @@
+
+
 input[type=text], select, textarea {
     width: 100%; /* Full width */
     padding: 13px; /* Some padding */  
@@ -27,7 +29,7 @@ input[type=submit]:hover {
 /* Add a background color and some padding around the form */
 .container {
     border-radius: 1px;
-    background-color: white;
+    background-color: black;
     padding: 100px;
     margin-top: 140x; /* Add a top margin */
     margin-bottom: 116px; /* Bottom margin */
@@ -35,6 +37,15 @@ input[type=submit]:hover {
 #headline {
     text-align: center;
     font-family: 'Press Start 2P', cursive;
-    font-size: 25px;
+    font-size: 55px;
+    color: white;
     
+}
+
+input[disabled] {
+    opacity: 0.5;
+}
+
+.green {
+    color: lightgreen;
 }

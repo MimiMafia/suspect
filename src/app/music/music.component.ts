@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-music',
@@ -10,63 +11,23 @@ export class MusicComponent implements OnInit {
 
   
 
-public concertArray = [
-  {
-    title: 'Organic Fest',
-    url: '../../assets/organicfest.jpg',
-    date: 'August 10-12, 2018',
-    location: 'Wilseyville, NORCAL',
-    website: 'http://www.theorganicfest.com'
- },
+public concertArray = [];
 
- {
-  title: 'Bukez Finest',
-  url: '../../assets/Bukez Finezt.png',
-  date: 'July 7th, 2020',
-  location: 'Your moms house',
-},
-
-{
-  title: 'Vegan Fest',
-  url: '../../assets/organicfest.jpg',
-  date: 'June 20th 2020',
-  location: 'italy',
-},
-
-{
-  title: 'Organic Fest',
-  url: '../../assets/organicfest.jpg',
-  date: 'August 10-12, 2018',
-  location: 'Wilseyville, NORCAL',
-},
-
-{
-  title: 'TXT CLUB',
-  url: '../../assets/organicfest.jpg',
-  date: 'Feb 12 2019',
-  location: 'greece',
-},
-
-{
-  title: 'Organic Fest',
-  url: '../../assets/organicfest.jpg',
-  date: 'August 10-12, 2018',
-  location: 'Wilseyville, NORCAL',
-},
-
-
-  
-
-
-]
-
-
-
-
-
-  constructor() { }
+  constructor(public http: HttpClient) { }
 
   ngOnInit() {
+    this.http.get('http://localhost:8080/getMusic')
+    .subscribe((response: any) => {
+      console.log(response);
+      this.concertArray = response;
+    }, (error) => {
+
+      console.log(error);
+
+    });
+
+  
+  
   }
 
 }

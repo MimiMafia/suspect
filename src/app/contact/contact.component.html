@@ -1,25 +1,54 @@
 
+  
+  <!-- Seperate window "Thankyou" for Contact mssg sent-->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Message Sent</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Thankyou! 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 <div class="container">
   <p id="headline"> CONTACT US
     <BR>
     <BR>
   </p>
-  <form action="action_page.php">
+  <form action="action_page.php" #contactForm="ngForm" (ngSubmit)="submit()">
 
 
-    <input type="text" id="fname" name="firstname" placeholder="Your full name" [(ngModel)]="contact.fullname" required>
+    <input type="text" id="fname" name="fullname" placeholder="Your full name" [(ngModel)]="contact.fullname" required>
     <br>
 
 
-    <input type="text" id="lname" name="lastname" placeholder="Email" [(ngModel)]="contact.email" required>
+    <input type="text" id="lname" name="email" placeholder="Email" [(ngModel)]="contact.email" required>
     <br>
 
 
 
 
-    <textarea id="subject" name="subject" placeholder="Your message" style="height:200px"></textarea>
+    <textarea id="subject" name="comments" placeholder="Your message" [(ngModel)]="contact.comments" required style="height:200px"></textarea>
 
-    <input type="submit" value="Submit">
+    <input type="submit" value="submit" [disabled]="submitting" data-toggle="modal" data-target="#exampleModal">>
+
+ 
+    <p class="green" *ngIf="success">success</p>
+
+
+
 
   </form>
 </div>
