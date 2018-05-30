@@ -5,8 +5,11 @@
   <div class="row">
     <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 colText" *ngFor="let item of concertArray">
       {{item.title}}
-    <a href="{{item.website}}">
-    <img [src]="item.url" height="290" width="310"> 
+      <a href="{{item.website}}" class="image-container">
+
+          <img [src]="item.url" class="event-img">
+
+
       </a>
       <br> {{item.date}}
       <br> {{item.location}}

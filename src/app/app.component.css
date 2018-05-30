@@ -12,3 +12,15 @@ body{
     background-color: black !important;
 }
 
+.test {
+    margin-left: auto;
+}
+
+ul {
+    width: 100%;
+}
+
+
+.dropdown-menu{
+    left: -75px;
+}
