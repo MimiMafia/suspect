@@ -8,26 +8,19 @@ import { HttpClient } from '@angular/common/http';
 })
 export class MusicComponent implements OnInit {
 
-
-  
-
 public concertArray = [];
 
   constructor(public http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get('http://localhost:8080/getMusic')
+    this.http.get('http://suspect-server.herokuapp.com/getMusic')
     .subscribe((response: any) => {
       console.log(response);
       this.concertArray = response;
     }, (error) => {
 
       console.log(error);
-
     });
-
-  
-  
   }
 
 }
